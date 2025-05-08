@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="09-dom.css">
+    <body>
+        <p>Youtube Subscribe Button</p>
+        <button class="youtube-button" 
+        onclick="Subscribe()"
+        >Subscribe </button>
+
+        <p>Amazon Shipping Calculator<br>
+        Orders under 40$ = + 10$ shipping fees<br>
+        Orders over 40$ : FREE shipping 
+        </p>
+        <input class="input" placeholder="Cost of Orders" 
+        onkeydown="handleKeyPress(event)">
+        <button class="cal-button" onclick="Calculate()">Calculate</button>
+        <p class="total"> </p>
+
+        <p>Rock Paper Scissors Game</p>
+        <button id="rock" onclick="playGame('rock')">Rock</button>
+        <button id="paper" onclick="playGame('paper')">Paper</button>
+        <button id="scissors" onclick="playGame('scissors')">Scissors</button>
+        <p class="status"></p>
+        <p class="choice"></p>
+        <p class="score"></p>
+        <button class="reset" onclick="resetScore()">Reset Score</button>
+        
+        <script src="09-dom.js"></script>
+    </body>
