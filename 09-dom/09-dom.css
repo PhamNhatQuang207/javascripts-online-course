@@ -1,54 +1,112 @@
-.youtube-button{
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 20px;
+/* Modern and harmonious styles for 09-dom project */
+:root {
+    --primary-color: #3a86ff;
+    --success-color: #52b788;
+    --accent-color: #ff006e;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
 }
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: hwb(215 85% 7%);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    padding: 32px;
+    line-height: 1.6;
 }
+
+/* Common button styles */
+button {
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* YouTube button styles */
+.youtube-button {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: 2px solid #ff0000;
+}
+
+.youtube-button:hover {
+    background-color: #ff0000;
+    color: white;
+}
+
+.subscribed-button {
+    background-color: #e5e5e5;
+    color: #666666;
+}
+
+/* Calculator styles */
 .cal-button {
-    background-color: #4CAF50; /* Green */
-    border: none;
+    background-color: var(--success-color);
     color: white;
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+}
+
+.input {
     font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-}
-.input{
-    font-size: 15px;
-    padding: 10px ;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #000000;
+    padding: 12px;
+    margin: 12px 0;
+    width: 200px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
     text-align: center;
-    border-radius: 4px;
+    transition: var(--transition);
 }
-.subscribed-button{
-    background-color: #969696;
+
+.input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+/* Rock Paper Scissors styles */
+#rock, #paper, #scissors {
+    background-color: var(--primary-color);
     color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 20px;
+    margin: 0 8px;
+    padding: 12px 20px;
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+    background-color: #2563eb;
+}
+
+/* Typography */
+p {
+    margin: 24px 0 12px;
+    font-size: 1.1rem;
+}
+
+.total, .status, .choice, .score {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Reset button */
+.reset {
+    background-color: var(--accent-color);
+    color: white;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    margin-top: 16px;
 }
