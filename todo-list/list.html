@@ -5,9 +5,12 @@
     
     <body>
         <h1>To-do List</h1>
-        <input class="todo-input"placeholder="Todo name" id="taskInput">
-        <button id="addButton" onclick="addTodo()">Add</button>
-        <div class="list"></div>
+        <div class="todo-input-grid">
+            <input class="todo-name"placeholder="Todo name" id="taskInput">
+            <input type="date" class = "todo-date">
+            <button id="addButton" onclick="addTodo()">Add</button>
+        </div>
+        <div class="list todo-grid"></div>
         <script src="todo.js"></script>
     </body>
 </html>
