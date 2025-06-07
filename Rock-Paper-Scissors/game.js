@@ -1,6 +1,10 @@
-function playGame(playerChoice) {
+function pickmove(){
     const choices = ['rock', 'paper', 'scissors'];
-    const computerChoice = choices[Math.floor(Math.random() * 3)];
+    const Choice = choices[Math.floor(Math.random() * 3)];
+    return Choice
+}
+function playGame(playerChoice) {
+    const computerChoice = pickmove();
     let result = '';
 
     if (playerChoice === computerChoice) {
@@ -35,4 +39,19 @@ function resetScore(){
     document.querySelector('.status').innerHTML = 'Game Reset!';
     document.querySelector('.choice').innerHTML = '';
     document.querySelector('.score').innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.gamesPlayed - score.wins - score.losses}`;
+}
+
+let isAutoplaying = false;
+let Id;
+function autoplay(){
+    if(!isAutoplaying){
+        Id = setInterval(function(){
+            playGame(pickmove());
+        },1000);
+        isAutoplaying = true;
+    }
+    else{
+        clearInterval(Id);
+        isAutoplaying = false;
+    }
 }
