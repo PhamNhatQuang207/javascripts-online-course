@@ -55,3 +55,15 @@ function autoplay(){
         isAutoplaying = false;
     }
 }
+//add event key to play game
+document.body.addEventListener('keydown' ,(event) => {
+    if (event.key === 'r'){
+        playGame('rock');
+    }
+    if (event.key === 'p'){
+        playGame('paper');
+    }
+    if (event.key === 's'){
+        playGame('scissors');
+    }
+})
