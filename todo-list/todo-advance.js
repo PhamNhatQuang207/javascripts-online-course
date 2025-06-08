@@ -13,6 +13,7 @@ function renderTodoList(){
             todoListHTML += html;                    
             });
     document.querySelector('.list').innerHTML = todoListHTML;
+    //event listener
     document.querySelectorAll('.delete-button')
     .forEach((deleteButton,index) => {
         deleteButton.addEventListener('click', () => {
