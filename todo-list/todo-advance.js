@@ -1,8 +1,10 @@
 const todoList = [];
 renderTodoList();
+
 function renderTodoList(){
     let todoListHTML = '';
-        todoList.forEach(function(todoObject,i){
+    //arrow function
+        todoList.forEach((todoObject,i) => {
         const { name, doDate } = todoObject;
             const html = 
             `<div>${name}</div> 
@@ -16,6 +18,7 @@ function renderTodoList(){
             });
     document.querySelector('.list').innerHTML = todoListHTML;
 }
+
 function addTodo() {
     const todoName = document.querySelector('.todo-name');
     const todoDate = document.querySelector('.todo-date');
