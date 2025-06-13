@@ -113,9 +113,9 @@ document.querySelectorAll('.delete-quantity-link').forEach((link)=>{
     });
 })
 
-document.querySelectorAll('delivery-option').forEach((element) => {
+document.querySelectorAll('.delivery-option').forEach((element) => {
     element.addEventListener('click',() => {
-        const {productId,deliveryOptionId} = element.dataset
+        const {productId,deliveryOptionId} = element.dataset;
         updateDeliveryOption(productId,deliveryOptionId);
     });
 });
