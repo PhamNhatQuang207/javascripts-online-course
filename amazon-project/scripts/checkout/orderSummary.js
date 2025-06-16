@@ -6,8 +6,9 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary(){
     let cartSummaryHTML = ''
-
+    let totalQuantity = 0;
     cart.forEach((cartItem) => {
+        totalQuantity += cartItem.quantity;
         const productId = cartItem.productId;
         let matchingProduct = getProduct(productId);
 
@@ -99,6 +100,11 @@ export function renderOrderSummary(){
             const container =document.querySelector(`.cart-item-container-${productId}`);
             container.remove();
             renderPaymentSummary();
+            let updatedTotalQuantity = 0;
+            cart.forEach((item) => {
+                updatedTotalQuantity += item.quantity;
+            });
+            document.querySelector('.return-to-home-link').innerHTML = `${updatedTotalQuantity} items`; 
         });
     })
 
@@ -110,5 +116,6 @@ export function renderOrderSummary(){
             renderPaymentSummary();
         });
     });
+    document.querySelector('.return-to-home-link').innerHTML = `${totalQuantity} items`
 }
 
