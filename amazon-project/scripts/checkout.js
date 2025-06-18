@@ -4,7 +4,12 @@ import  {loadProducts,loadProductsFetch} from "../data/products.js"
 import '../data/cart-oop.js';
 
 async function loadPage(){
-    await loadProductsFetch();
+    try{
+        await loadProductsFetch();
+    }
+    catch(error){
+        console.log('ERROR');
+    }
     renderOrderSummary();
     renderPaymentSummary();
 }
