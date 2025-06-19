@@ -64,11 +64,12 @@ export function renderPaymentSummary(){
 
       const order = await response.json();
       addOrder(order);
+      cart.length = 0;
+      localStorage.removeItem('cart');
       }
       catch(error){
         console.log('Unexpected error');
       }
-
       window.location.href = 'orders.html'
     });
 }
